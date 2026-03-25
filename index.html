@@ -1,100 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Լեգենդարիում</title>
     <meta charset="UTF-8">
     <link rel="icon" href="./img/stayl/logo_ring.png" type="image/x-icon">
     <link rel="stylesheet" href="./style.css" type="text/css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <style>
+        .read-more-btn {
+            background: none;
+            border: none;
+            color: #CCCC99;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: inherit;
+            font-family: inherit;
+            padding: 0;
+            margin-left: 5px;
+            display: inline-block;
+        }
+        .read-more-btn:hover { color: #e6e6b3; }
+        .full-text-hidden { display: none; }
+        .text-wrapper .short-text { display: inline; }
+    </style>
 </head>
-<body>
-    <div class="header"> <!-- ----------------------------------------- -->
-        <h3>Թոլքինի Լեգենդարիումը</h3>
-        <p>Թոլքինի գրքերի աշխարհը, լեգենդարիումի պարզաբանումը, սյուժեն <br> ինչպես նաև գրքերի Էկրանավորումը</p>
-        <div class="navbar"> 
-            <img src="img/stayl/m0_b.gif" alt="Գլխավոր էջ">
-            <a href="./pages/2plot/plot.html"><img src="img/stayl/m1_a.gif" alt="Սյուժե"></a>
-            <a href="./pages/3heroes/heroes.html"><img src="img/stayl/m2_a.gif" alt="Հերոսներ"></a>
-            <a href="./pages/4map/map.html"><img src="img/stayl/m3_a.gif" alt="Քարտեզ"></a>
-            <a href="./pages/5aboutTolkien/aboutTolkien.html"><img src="img/stayl/m4_a.gif" alt="Թոլքինի մասին"></a>
-            <a href="./pages/6aboutMe/aboutMe.html"><img src="img/stayl/m5_a.gif" alt="Կայքի մասին"></a>
-        </div>   
-    </div>
-    <div class="content"> <!-- ----------------------------------------- -->
-        <!-- <div class="img-sur"> </div> <img src="./img/background/sur1.png" alt="sur" > -->
-        <div>
+
+<body class="ringNone">
+    <div class="wrapper ringNone"></div>
+    <div class="main-area">
+        <div class="header">
+            <h3>Թոլքինի Լեգենդարիումը</h3>
+            <p>Թոլքինի գրքերի աշխարհը, լեգենդարիումի պարզաբանումը, սյուժեն <br> ինչպես նաև գրքերի Էկրանավորումը</p>
+            <div class="navbar">
+                <a><img src="img/stayl/m0_b.gif" alt="Գլխավոր էջ"></a>
+                <a href="./pages/2plot/plot.html"><img src="img/stayl/m1_a.gif" alt="Սյուժե"></a>
+                <a href="./pages/3heroes/heroes.html"><img src="img/stayl/m2_a.gif" alt="Հերոսներ"></a>
+                <a href="./pages/4map/map.html"><img src="img/stayl/m3_a.gif" alt="Քարտեզ"></a>
+                <a href="./pages/5aboutTolkien/aboutTolkien.html"><img src="img/stayl/m4_a.gif" alt="Թոլքինի մասին"></a>
+                <a href="./pages/6aboutMe/aboutMe.html"><img src="img/stayl/m5_a.gif" alt="Կայքի մասին"></a>
+            </div>
+        </div>
+        <div class="content">
             <div class="content-books">
                 <div>
-                <a href="https://hy.wikipedia.org/wiki/%D5%8D%D5%AB%D5%AC%D5%B4%D5%A1%D6%80%D5%AB%D5%AC%D5%AB%D5%B8%D5%B6" target="_blank">
-                    <img src="img/books/theSilmarillion.jpg" alt="Սիլմարիլիոն">
-                    <span>«Սիլմարիլիոն»</span>
-                </a>  
-                <a href="https://en.wikipedia.org/wiki/The_Children_of_H%C3%BArin" target="_blank">
-                    <img src="img/books/theChildrenofHúrin.jpg" alt="Հուրինի զավակները">
-                    <span>«Հուրինի զավակները»</span>
-                </a>
-                <a href="https://en.wikipedia.org/wiki/Beren_and_L%C3%BAthien" target="_blank">
-                    <img src="img/books/berenAndLuthien.jpg" alt="Բերենը և Լյութիենը">
-                    <span>«Բերենը և Լյութիենը»</span>
-                </a>
+                    <a href="https://hy.wikipedia.org/wiki/%D5%8D%D5%AB%D5%AC%D5%B4%D5%A1%D6%80%D5%AB%D5%AC%D5%B8%D5%B6" target="_blank">
+                        <img class="bookB" src="img/books/theSilmarillion.jpg" alt="Սիլմարիլիոն">
+                        <span>«Սիլմարիլիոն»</span>
+                    </a>
+                    <a href="https://en.wikipedia.org/wiki/The_Children_of_H%C3%BArin" target="_blank">
+                        <img class="bookB" src="img/books/theChildrenofHúrin.jpg" alt="Հուրինի զավակները">
+                        <span>«Հուրինի զավակները»</span>
+                    </a>
+                    <a href="https://en.wikipedia.org/wiki/Beren_and_L%C3%BAthien" target="_blank">
+                        <img class="bookB" src="img/books/berenAndLuthien.jpg" alt="Բերենը և Լյութիենը">
+                        <span>«Բերենը և Լյութիենը»</span>
+                    </a>
                 </div>
                 <div>
-                <a href="https://grapaharan.org/%D5%80%D5%B8%D5%A2%D5%AB%D5%BF_%D5%AF%D5%A1%D5%B4_%D5%A3%D5%B6%D5%A1%D5%AC%D5%B6_%D5%B8%D6%82_%D5%A3%D5%A1%D5%AC%D5%A8" target="_blank">
-                    <img src="img/books/hobbit.jpg" alt="Հոբիթը">
-                    <span>«Հոբիթը»</span>
-                </a>
-                <a href="https://grapaharan.org/%D5%84%D5%A1%D5%BF%D5%A1%D5%B6%D5%AB%D5%B6%D5%A5%D6%80%D5%AB_%D5%8F%D5%AB%D6%80%D5%A1%D5%AF%D5%A1%D5%AC%D5%A8#.D5.8A.D4.B1.D5.80.D4.B1.D5.8A.D4.B1.D5.86.D5.86.D4.B5.D5.90.D4.B8" target="_blank">
-                    <img src="img/books/theFellowshipOfTheRing.jpg" alt="Մատանու եղբայրությունը">
-                    <span>«Մատանու եղբայրությունը»</span>
-                </a>
-                <a href="https://grapaharan.org/%D5%84%D5%A1%D5%BF%D5%A1%D5%B6%D5%AB%D5%B6%D5%A5%D6%80%D5%AB_%D5%8F%D5%AB%D6%80%D5%A1%D5%AF%D5%A1%D5%AC%D5%A8#.D4.B5.D5.90.D4.BF.D5.88.D5.92_.D4.B1.D5.84.D5.90.D5.88.D5.91" target="_blank">
-                    <img src="img/books/theTwoTowers.jpg" alt="Երկու ամրոց">
-                    <span>«Երկու ամրոց»</span>
-                </a>
-                <a href="https://grapaharan.org/%D5%84%D5%A1%D5%BF%D5%A1%D5%B6%D5%AB%D5%B6%D5%A5%D6%80%D5%AB_%D5%8F%D5%AB%D6%80%D5%A1%D5%AF%D5%A1%D5%AC%D5%A8#.D4.B1.D5.90.D5.94.D4.B1.D5.85.D4.BB_.D5.8E.D4.B5.D5.90.D4.B1.D4.B4.D4.B1.D5.90.D5.81.D4.B8" target="_blank">
-                    <img src="img/books/theReturnOfTheKing.jpg" alt="Արքայի վերադարձը">
-                    <span>«Արքայի վերադարձը»</span>
-                </a>
+                    <a href="https://grapaharan.org/%D5%80%D5%B8%D5%A2%D5%AB%D5%BF_%D5%AF%D5%A1%D5%B4_%D5%A3%D5%B6%D5%A1%D5%AC%D5%B6_%D5%B8%D6%82_%D5%A3%D5%A1%D5%AC%D5%A8" target="_blank">
+                        <img class="bookB" src="img/books/hobbit.jpg" alt="Հոբիթը">
+                        <span>«Հոբիթը»</span>
+                    </a>
+                    <a href="https://grapaharan.org/%D5%84%D5%A1%D5%BF%D5%A1%D5%B6%D5%AB%D5%B6%D5%A5%D6%80%D5%AB_%D5%8F%D5%AB%D6%80%D5%A1%D5%AF%D5%A1%D5%AC%D5%A8#.D5.8A.D4.B1.D5.80.D4.B1.D5.8A.D4.B1.D5.86.D5.86.D4.B5.D5.90.D4.B8" target="_blank">
+                        <img class="bookB" src="img/books/theFellowshipOfTheRing.jpg" alt="Մատանու եղբայրությունը">
+                        <span>«Մատանու եղբայրությունը»</span>
+                    </a>
+                    <a href="https://grapaharan.org/%D5%84%D5%A1%D5%BF%D5%A1%D5%B6%D5%AB%D5%B6%D5%A5%D6%80%D5%AB_%D5%8F%D5%AB%D6%80%D5%A1%D5%AF%D5%A1%D5%AC%D5%A8#.D4.B5.D5.90.D4.BF.D5.88.D5.92_.D4.B1.D5.84.D5.90.D5.88.D5.91" target="_blank">
+                        <img class="bookB" src="img/books/theTwoTowers.jpg" alt="Երկու ամրոց">
+                        <span>«Երկու ամրոց»</span>
+                    </a>
+                    <a href="https://grapaharan.org/%D5%84%D5%A1%D5%BF%D5%A1%D5%B6%D5%AB%D5%B6%D5%A5%D6%80%D5%AB_%D5%8F%D5%AB%D6%80%D5%A1%D5%AF%D5%A1%D5%AC%D5%A8#.D4.B1.D5.90.D5.94.D4.B1.D5.85.D4.BB_.D5.8E.D4.B5.D5.90.D4.B1.D4.B4.D4.B1.D5.90.D5.81.D4.B8" target="_blank">
+                        <img class="bookB" src="img/books/theReturnOfTheKing.jpg" alt="Արքայի վերադարձը">
+                        <span>«Արքայի վերադարձը»</span>
+                    </a>
                 </div>
             </div>
             <div class="content-text">
-            <h2 class="content-text-el">Լեգենդարիում</h2>
-            <p class="content-text-el">Լեգենդարիումը անգլիացի գրող <i>Ջոն Ռոնալդ Ռուել Թոլքինի</i> ստեղծագործությունների, գրքերի և անավարտ գործերի ամբողջության
-               առասպելական ժողովածու է: Այն հորինված աշխարհ է, որտեղ զարգանում են Թոլքինի ստեղծագործություններում նկարագրված
-               իրադարձությունները։ Ինքը, Թոլքինը, որոշ քարտեզներ է գծել, որի շնորհիվ էլ մենք պատկերացում ունենք Թոլքինի 
-               ստեղծած լեգենդարիումի (Արդա) աշխարհի մասին։ Լեգենդարիումի ծագումը սկսվում է 1914 թվականից, երբ Թոլքինը սկսում է գրել 
-               պատմությունների ուրվագծերը, գծել քարտեզներ, հորինել լեզուներ և անուններ՝ որպես եզակի անգլիական դիցաբանություն 
-               ստեղծելու մասնավոր նախագծի մի մաս։ Թոլքինը լինելով Օքսֆորդի համալսարանի պրոֆեսոր, հանրահռչակ գրող և բանասեր դասավանդել 
-               է անգլերեն և գրականություն։ Թոլքինը նախ հորինում էր լեզուներ վորոնցով խոսելու էին իր հերոսները, հետո գրում պատմություններ։ 
-               Թոլքինի ստեղծագործությունները ստացել են բազմաթիվ միջազգային մրցանակներ, դրանց հիման վրա նկարահանվել են ֆիլմեր, մուլտֆիլմեր, 
-               ստեղծվել են համակարգչային խաղեր, գրվել են պիեսներ, սիմֆոնիկ ստեղծագործություններ։ Թոլքինի անունով անվանվել է աստերոիդ, 
-               Միջերկրի աշխարհագրական անունների և հերոսների անուններով են կոչվել իրական աշխարհագրական օբյեկտներ և կենդանիներ։ Լույս են 
-               տեսնում ամսագրեր։ Գոյություն ունեն բազմաթիվ ինտերնետային կայքեր, որոնք ստեղծել են նրա երկրպագուները։ Գրականագիտության մեջ 
-               ստեղծվել է թոլքինագիտության ճյուղը։
-            </p>
+                <h2 class="content-text-el">Լեգենդարիում</h2>
+                <div class="text-wrapper" id="legendarium-text-wrapper">
+                    <p class="content-text-el" id="full-paragraph">
+                        Լեգենդարիումը անգլիացի գրող <i>Ջոն Ռոնալդ Ռուել Թոլքինի</i> ստեղծագործությունների, գրքերի և անավարտ գործերի ամբողջության առասպելական ժողովածու է: Այն հորինված աշխարհ է, որտեղ զարգանում են Թոլքինի ստեղծագործություններում նկարագրված իրադարձությունները։ Ինքը, Թոլքինը, որոշ քարտեզներ է գծել, որի շնորհիվ էլ մենք պատկերացում ունենք Թոլքինի ստեղծած լեգենդարիումի (Արդա) աշխարհի մասին։ Լեգենդարիումի ծագումը սկսվում է 1914 թվականից, երբ Թոլքինը սկսում է գրել պատմությունների ուրվագծերը, գծել քարտեզներ, հորինել լեզուներ և անուններ՝ որպես եզակի անգլիական դիցաբանություն ստեղծելու մասնավոր նախագծի մի մաս։ Թոլքինը լինելով Օքսֆորդի համալսարանի պրոֆեսոր, հանրահռչակ գրող և բանասեր դասավանդել է անգլերեն և գրականություն։ Թոլքինը նախ հորինում էր լեզուներ վորոնցով խոսելու էին իր հերոսները, հետո գրում պատմություններ։ Թոլքինի ստեղծագործությունները ստացել են բազմաթիվ միջազգային մրցանակներ, դրանց հիման վրա նկարահանվել են ֆիլմեր, մուլտֆիլմեր, ստեղծվել են համակարգչային խաղեր, գրվել են պիեսներ, սիմֆոնիկ ստեղծագործություններ։ Թոլքինի անունով անվանվել է աստերոիդ, Միջերկրի աշխարհագրական անունների և հերոսների անուններով են կոչվել իրական աշխարհագրական օբյեկտներ և կենդանիներ։ Լույս են տեսնում ամսագրեր։ Գոյություն ունեն բազմաթիվ ինտերնետային կայքեր, որոնք ստեղծել են նրա երկрպագուները։ Գրականագիտության մեջ ստեղծվել է թոլքինագիտության ճյուղը։
+                    </p>
+                </div>
             </div>
-            
             <div class="content-video">
                 <h2>Էկրանավորում</h2>
                 <section class="content-video-el">
-                    <video width="700" height="400" controls poster="./img/picture/legendarium.jpg">  <!-- autoplay -->
+                    <video width="700" height="400" controls poster="./img/picture/legendarium.jpg">
                         <source src="./img/TheBeautyOfMiddleEarth.mp4" type="video/mp4">
                     </video>
                 </section>
             </div>
         </div>
-        <!-- <div class="img-sur"> <img src="./img/background/sur1.png" alt="sur" ></div> -->
-    </div>
-    <div class="footer"> <!-- ----------------------------------------- -->
-        <img src="img/stayl/divider.gif" alt="line">
-        <div style="display:flex;"> 
-            <a href="#"><b>Գլխավոր էջ</b></a> <p>--</p>
-            <a href="./pages/2plot/plot.html"><b>Սյուժե</b></a> <p>--</p>
-            <a href="./pages/3heroes/heroes.html"><b>Հերոսներ</b></a> <p>--</p>
-            <a href="./pages/4map/map.html"><b>Քարտեզ</b></a> <p>--</p>
-            <a href="./pages/5aboutTolkien/aboutTolkien.html"><b>Թոլքինի մասին</b></a> <p>--</p>
-            <a href="./pages/6aboutMe/aboutMe.html"><b>Կայքի մասին</b></a>
+        <div class="footer">
+            <img src="img/stayl/divider.gif" alt="line">
+            <div  style="display:flex; justify-content: center;  flex-wrap: wrap;">
+                <a href="#"><b>Գլխավոր էջ</b></a><p>--</p>
+                <a href="./pages/2plot/plot.html"><b>Սյուժե</b></a><p>--</p>
+                <a href="./pages/3heroes/heroes.html"><b>Հերոսներ</b></a><p>--</p>
+                <a href="./pages/4map/map.html"><b>Քարտեզ</b></a><p>--</p>
+                <a href="./pages/5aboutTolkien/aboutTolkien.html"><b>Թոլքինի մասին</b></a><p>--</p>
+                <a href="./pages/6aboutMe/aboutMe.html"><b>Կայքի մասին</b></a>
+            </div>
+            <img src="img/stayl/line.gif" alt="line" style="width: 340px; height: 1px;">
         </div>
-        <img src="img/stayl/line.gif" alt="line" style="width: 340px; height: 1px;">
     </div>
+
+    <!-- <script>
+        (function() {
+            const paragraphElem = document.getElementById('full-paragraph');
+            if (!paragraphElem) return;
+            const fullHTML = paragraphElem.innerHTML;
+            const cutPhrase = "ստեղծելու մասնավոր նախագծի մի մաս։";
+            let cutIndex = fullHTML.indexOf(cutPhrase);
+            if (cutIndex === -1) return;
+            const endOfCut = cutIndex + cutPhrase.length;
+            let firstPart = fullHTML.substring(0, endOfCut);
+            let secondPart = fullHTML.substring(endOfCut);
+            const wrapper = document.getElementById('legendarium-text-wrapper');
+            if (!wrapper) return;
+            wrapper.innerHTML = '';
+            const shortSpan = document.createElement('span');
+            shortSpan.innerHTML = firstPart;
+            const fullSpan = document.createElement('span');
+            fullSpan.style.display = 'none';
+            fullSpan.innerHTML = secondPart;
+            const readMoreBtn = document.createElement('button');
+            readMoreBtn.textContent = 'Տեսնել ավելին';
+            readMoreBtn.className = 'read-more-btn';
+            const hideBtn = document.createElement('button');
+            hideBtn.textContent = 'Փակել';
+            hideBtn.className = 'read-more-btn';
+            hideBtn.style.display = 'none';
+            wrapper.appendChild(shortSpan);
+            wrapper.appendChild(fullSpan);
+            wrapper.appendChild(readMoreBtn);
+            wrapper.appendChild(hideBtn);
+            readMoreBtn.onclick = () => {
+                fullSpan.style.display = 'inline';
+                readMoreBtn.style.display = 'none';
+                hideBtn.style.display = 'inline-block';
+            };
+            hideBtn.onclick = () => {
+                fullSpan.style.display = 'none';
+                readMoreBtn.style.display = 'inline-block';
+                hideBtn.style.display = 'none';
+            };
+        })();
+    </script> -->
 </body>
 </html>
