@@ -4,9 +4,21 @@
 	margin: 0px;
 	padding: 0px;
 }
+
 body{
 	background-color: black;
+	display: flex;
 }
+
+.wrapper{
+	width: 0px;
+}
+
+.main-area {
+    margin: 0 auto; 
+    width: 100%;
+}
+
 /* --------------------------------------- */
 .header {
 	background-image: url(./img/background/back-second.jpg);
@@ -15,39 +27,43 @@ body{
 	height: auto;
 	text-align: center;
 }
+
 .header h3{
 	font-size: 60px;
 	padding-top: 60px;
 }
+
 .header p{
 	font-size: 20px;
 }
+
 .header div a{
 	margin: 0px 4px;
 }
+
 .header h3, p, div{
 	margin-bottom: 25px;
 }
+
 /* --------------------------------------- */
 .content {
 	height: auto;
 	background-image: url(./img/background/back.jpg);
+	background-position: center top;
 	background-repeat: no-repeat;
-	/* display: flex; */
 }
-.content div img {
-	width: 200px;
-	margin: 0;
-}
+
 .content .content-books, .content-text{
 	margin: auto;
 	width: 909px;
 }
+
 .content .content-books div{
 	display: flex;
 	justify-content: center;
 	margin-bottom: 5px;
 }
+
 .content .content-books div a{
 	font-size: 12px;
 	width: 150px;
@@ -55,41 +71,52 @@ body{
 	margin: 5px;
 	text-align: center;
 }
+
 .content .content-books div a img{
 	width: 140px;
     height: 210px;
 	padding: 3px;
 	border: 0.1px solid ;
 }
+
+.content .content-books .bookB:hover{
+	background-color: #CCCC99;
+}
+
 /* --- */
 .content .content-text .content-text-el{
 	margin: 25px;
 }
+
 .content .content-text p {
 	text-indent: 25px;
 	text-align: justify;
 	line-height: 1.5;
 }
+
+/* Видео */
 .content .content-video .content-video-el{
     margin-left: auto;
     margin-right: auto;
-	width: 700px;
 	height: auto;
 	border: 3px solid ;
 }
+
 .content .content-video{
 	margin: auto;
 	width: 900px;
 }
+
 .content .content-video h2{
 	margin: 25px;
-	width: 850px;
 }
+
 /* --------------------------------------- */
 .footer {
 	height: auto;
 	text-align: center;
 }
+
 .footer div{
 	justify-content: center;
 	margin: 20px;
@@ -98,8 +125,68 @@ body{
 	margin: 10px ;
 	padding: 0;
 }
-.footer div p{
-	margin: 0px;
+
+/* ================= МОБИЛЬНАЯ ВЕРСИЯ ================= */
+
+@media (max-width: 735px) {
+    body {
+        display: block !important;
+        width: 100% !important;
+    }
+
+    /* ❗ ГЛАВНОЕ ИСПРАВЛЕНИЕ: Сбрасываем 909px на 100% и центрируем */
+    .main-area, 
+    .content .content-books, 
+    .content-text, 
+    .content .content-video {
+        width: 100% !important; 
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+    }
+
+    .header h3 { font-size: 30px; padding-top: 30px; }
+    .header p { font-size: 14px; }
+
+    .content .content-books div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .content .content-books div a {
+        width: 40% !important; /* Книги по две в ряд */
+        height: auto !important;
+        margin: 10px 5px;
+		font-size: 15px;
+    }
+
+    .content .content-books div a img {
+        /* width: 100% !important; */
+        /* height: auto !important; */
+    }
+
+    .content-video .content-video-el {
+        width: 90% !important;
+        margin: 0 auto !important;
+    }
+
+	/* .content-text-el {
+		margin: 15px;
+
+	} */
+
+	element.style {
+
+    align-items: center;
+
+	}
+
+    video {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .footer img { width: 200px !important; }
 }
-
-
