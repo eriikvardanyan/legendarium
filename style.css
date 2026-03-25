@@ -94,8 +94,9 @@ body{
 	line-height: 1.5;
 }
 
-/* Видео */
 .content .content-video .content-video-el{
+    display: flex; 
+    justify-content: center;
     margin-left: auto;
     margin-right: auto;
 	height: auto;
@@ -126,15 +127,12 @@ body{
 	padding: 0;
 }
 
-/* ================= МОБИЛЬНАЯ ВЕРСИЯ ================= */
-
 @media (max-width: 735px) {
     body {
         display: block !important;
         width: 100% !important;
     }
 
-    /* ❗ ГЛАВНОЕ ИСПРАВЛЕНИЕ: Сбрасываем 909px на 100% и центрируем */
     .main-area, 
     .content .content-books, 
     .content-text, 
@@ -146,7 +144,13 @@ body{
     }
 
     .header h3 { font-size: 30px; padding-top: 30px; }
-    .header p { font-size: 14px; }
+    
+    .header .header-desc { 
+        font-size: 14px; 
+        padding: 0 20px; 
+        text-align: center; 
+        line-height: 1.4;
+    }
 
     .content .content-books div {
         display: flex;
@@ -156,15 +160,19 @@ body{
     }
 
     .content .content-books div a {
-        width: 40% !important; /* Книги по две в ряд */
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 42% !important; 
         height: auto !important;
         margin: 10px 5px;
-		font-size: 15px;
+        font-size: 13px;
     }
 
     .content .content-books div a img {
-        /* width: 100% !important; */
-        /* height: auto !important; */
+        width: 120px !important;
+        height: 180px !important;
+        margin-bottom: 5px;
     }
 
     .content-video .content-video-el {
@@ -172,21 +180,15 @@ body{
         margin: 0 auto !important;
     }
 
-	/* .content-text-el {
-		margin: 15px;
-
-	} */
-
-	element.style {
-
-    align-items: center;
-
-	}
-
     video {
         width: 100% !important;
         height: auto !important;
     }
 
     .footer img { width: 200px !important; }
+
+	.text-wrapper {
+		margin: 2px 15px !important;
+		text-align: justify !important;
+	}
 }
