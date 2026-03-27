@@ -35,7 +35,6 @@ body{
 	background-repeat: no-repeat;
 	background-position: center top;
 	text-align: center;
-	/* display: flex; */
 }
 .content div img {
 	width: 200px;
@@ -84,4 +83,63 @@ body{
 }
 .footer div p{
 	margin: 0px;
+}
+
+/* --- МОБИЛЬНАЯ ВЕРСИЯ (Адаптация под index.html) --- */
+
+@media (max-width: 735px) {
+    /* Шапка как в index */
+
+	.header h3 { font-size: 30px; padding-top: 30px; }
+
+    .header .header-desc { 
+        font-size: 14px; 
+        padding: 0 20px; 
+        text-align: center; 
+        line-height: 1.4;
+    }
+
+    .header .navbar img {
+        width: 35px; /* Уменьшенные иконки */
+        height: auto;
+    }
+
+    .header h1 {
+        font-size: 22px;
+        margin-top: 10px;
+    }
+
+    /* Контент */
+    .content .content-text {
+        width: 90%;
+    }
+    
+    /* Скрываем всё, что внутри секций по умолчанию */
+    .mobile-collapse {
+        display: none; 
+        margin-top: 10px;
+    }
+
+    /* Стили для заголовка-кнопки */
+    .accordion-header {
+        cursor: pointer;
+        display: block;
+        border-bottom: 1px solid #CCCC9955;
+        padding-bottom: 5px;
+    }
+
+    .content .content-text div p img {
+        width: 100%;
+        float: none;
+        margin: 10px 0;
+    }
+
+    /* Футер как в index */
+    .footer div {
+        flex-wrap: wrap;
+        font-size: 10px;
+        gap: 5px;
+    }
+    .footer img { width: 200px !important; }
+
 }
