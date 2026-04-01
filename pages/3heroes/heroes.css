@@ -4,9 +4,11 @@
 	margin: 0px;
 	padding: 0px;
 }
+
 body{
 	background-color: black;
 }
+
 /* --------------------------------------- */
 .header {
 	background-image: url(../../img/background/back-second.jpg);
@@ -15,19 +17,24 @@ body{
 	height: auto;
 	text-align: center;
 }
+
 .header h3{
 	font-size: 60px;
 	padding-top: 60px;
 }
+
 .header h3, p, div{
 	margin-bottom: 25px;
 }
+
 .header p{
 	font-size: 20px;
 }
+
 .header div a{
 	margin: 0px 4px;
 }
+
 /* --------------------------------------- */
 .content {
 	height: auto;
@@ -35,53 +42,41 @@ body{
 	background-repeat: no-repeat;
 	background-position: center top;
 	text-align: center;
-	/* display: flex; */
 }
+
 .content div img {
 	width: 200px;
 }
+
 .content .content-block{
 	margin: auto;
 	width: 1000px;
 	text-align: left;
 	text-indent: 25px;
 }
+
+/* картинки героев */
 .content .content-block div img {
 	width: 140px;
     height: 210px;
 	border: 3px solid ;
 }
+
 .content .content-block div p {
 	font-size: 14px;
 	margin: 10px;
 }
+
 .content .content-block ul li{
 	margin-left: 45px;
 }
-/* .content .content-text h3, h4{
-	margin: 20px 0 20px 0;
-	text-indent: 0px;
-}
-.content .content-text h1{
-	text-align: center;
-}
-.content .content-text div p{
-	text-indent: 25px;
-	text-align: justify;
-
-}
-.content .content-text p img {
-	float: left;
-	width: 135px;
-	margin: 0px 10px 10px 10px;
-	border: 3px solid ;
-} */
 
 /* --------------------------------------- */
 .footer {
 	height: auto;
 	text-align: center;
 }
+
 .footer div{
 	justify-content: center;
 	margin: 20px;
@@ -90,6 +85,128 @@ body{
 	margin: 10px ;
 	padding: 0;
 }
+
 .footer div p{
 	margin: 0px;
+}
+
+/* Стиль для ссылки в копирайте */
+.copyright {
+    margin-top: 20px;
+    font-size: 14px;
+    text-align: center;
+}
+.copyright a {
+    color: #ffcc00; /* Золотистый цвет под стиль колец/логотипа */
+    text-decoration: underline;
+
+}
+.copyright a:hover {
+    color: #ffffff;
+}
+
+        
+/* ================= MOBILE ================= */
+@media (max-width: 735px) {
+
+    /* Шапка по твоим правилам */
+    .header h3 { font-size: 30px; padding-top: 30px; }
+
+    .header .header-desc { 
+        font-size: 14px; 
+        padding: 0 20px; 
+        text-align: center; 
+        line-height: 1.4;
+    }
+
+    li {
+        font-size: 12px !important; /* Увеличиваем размер шрифта для лучшей читаемости на мобильных */
+    }
+
+    .vern {
+        font-size: 13px !important; /* Увеличиваем размер шрифта для лучшей читаемости на мобильных */
+    }
+
+    .header .navbar img {
+        width: 35px; /* Уменьшенные иконки */
+        height: auto;
+    }
+
+    .header h1 {
+        font-size: 22px;
+        margin-top: 10px;
+    }
+
+    /* Подвал по твоим правилам */
+    /* .footer div {
+        flex-wrap: wrap;
+        font-size: 10px;
+        gap: 5px;
+    } */
+
+
+    /* Контент: адаптация под ширину экрана */
+    .content .content-block {
+        width: 100% !important;
+        padding: 0 10px;
+        box-sizing: border-box;
+        text-indent: 0;
+
+    }
+
+    /* Блок героев: меняем строку на колонку (герои идут друг под другом) */
+    .content-block > div[style*="display: flex;"] {
+        flex-direction: column !important;
+
+    }
+
+    /* Скрываем вертикальную разделительную линию (line.gif) */
+    .content-block > div[style*="display: flex;"] > img[src*="line.gif"] {
+        display: none !important;
+    }
+
+    /* Внутри карточки героя: картинка рядом с текстом */
+    .content-block > div[style*="display: flex;"] > div {
+        width: 100% !important;
+        margin-bottom: 20px !important;
+        align-items: center; /* Выравнивание по центру */
+    }
+
+    /* Текст героя: сбрасываем фиксированную ширину (333px), чтобы текст занимал всё доступное место */
+.content-block > div > div > p {
+        width: auto !important;
+        margin-left: 10px;
+        flex: 1;
+        font-size: 10px !important; /* <-- ДОБАВЬ ЭТУ СТРОКУ, меняй цифру на нужную */
+        text-align: justify; /* Выравнивание текста по ширине */
+    }
+
+    /* Уменьшаем картинки героев, чтобы они хорошо смотрелись с текстом на мобильном */
+    .content .content-block div img {
+        width: 100px;
+        height: 150px;
+    }
+
+    .footer div {
+        display: flex;
+        flex-wrap: wrap; /* Разрешаем перенос на новую строку */
+        justify-content: center;
+        gap: 10px; /* Расстояние между элементами */
+        padding: 0 20px;
+    }
+
+    /* Стили для самих ссылок, чтобы они выглядели как на фото */
+    .footer div a {
+        color: #CCCC99; /* Светло-золотистый цвет */
+        text-decoration: underline; /* Подчеркивание */
+        font-size: 14px;
+        white-space: nowrap; /* Чтобы текст ссылки не разрывался */
+    }
+
+    /* Скрываем разделители "--" на мобилках, если они мешают переносу */
+    .footer div p {
+        display: none; 
+    }
+
+    .footer img { width: 200px !important; }
 }
