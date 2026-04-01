@@ -1,145 +1,207 @@
 * {
-	font-family: Arial, Helvetica, sans-serif;
-	color: #CCCC99;
-	margin: 0px;
-	padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #CCCC99;
+    margin: 0px;
+    padding: 0px;
 }
-body{
-	background-color: black;
+body {
+    background-color: black;
 }
+
 /* --------------------------------------- */
 .header {
-	background-image: url(../../img/background/back-second.jpg);
-	background-repeat: no-repeat;
-	background-position: center;
-	height: auto;
-	text-align: center;
+    background-image: url(../../img/background/back-second.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: auto;
+    text-align: center;
 }
-.header h3{
-	font-size: 60px;
-	padding-top: 60px;
+.header h3 {
+    font-size: 60px;
+    padding-top: 60px;
 }
-.header h3, p, div{
-	margin-bottom: 25px;
+
+/* ՈՒՂՂՈՒՄ 1: Այստեղ սխալը հնում p, div-ն էր: Հիմա այն ազդում է ՄԻԱՅՆ հեդերի վրա */
+.header h3, .header p, .header .navbar {
+    margin-bottom: 25px;
 }
-.header p{
-	font-size: 20px;
+
+.header p {
+    font-size: 20px;
 }
-.header div a{
-	margin: 0px 4px;
+.header div a {
+    margin: 0px 4px;
 }
+
 /* --------------------------------------- */
 .content {
-	height: auto;
-	background-image: url(../../img/background/library2.jpg);
-	background-repeat: no-repeat;
-	background-position: center top;
-	text-align: center;
+    height: auto;
+    background-image: url(../../img/background/library2.jpg);
+    background-repeat: no-repeat;
+    background-position: center top;
+    text-align: center;
 }
 .content div img {
-	width: 200px;
+    width: 200px;
 }
-.content .content-text{
-	margin: auto;
-	width: 1000px;
-	text-align: left;
+.content .content-text {
+    margin: auto;
+    width: 1000px;
+    text-align: left;
 }
-.content .content-text h3{
-	margin: 20px 0 20px 0;
+
+b {
+    display: inline-block; /* Սա թույլ կտա, որ margin-ը աշխատի */
+    margin-bottom: 6px;
+    margin-top: 6px;
 }
-.content .content-text ul li ol{
-	margin-left: 45px;
+
+/* Սյուժե վերնագիրը */
+.content .content-text h3 {
+    font-size: 30px;
+    margin-top: 30px;
 }
-.content .content-text div h3 img{
-	width: 700px; 
-	height: 2px;
+
+/* ՈՒՂՂՈՒՄ 2: Ժամանակագրությունը կպցնում ենք Սյուժեին (հեռացնում ենք վերևի դատարկությունը) */
+.content .content-text .section h3 {
+    margin-top: 0px !important;
 }
-.content .content-text .content-text-el{
-	margin: 20px 0 20px 0;
+
+/* ՈՒՂՂՈՒՄ 3: text-align: justify; սովորական (Desktop) ռեժիմի համար */
+.content .content-text p {
+    text-indent: 25px;
+    text-align: justify;
 }
-.content .content-text div p{
-	text-indent: 25px;
-	text-align: justify;
+
+.content .content-text ul, .content .content-text ol {
+    margin-left: 50px;
 }
-.content .content-text div p img{
-	width: 400px;
-	float: right;
-	margin: 10px;
-	border: 3px solid ;
-}	
+
+/* Սթայլեր նկարների համար */
+.img-t {
+    float: right;
+    width: 250px;
+    height: auto;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    border: 2px solid #CCCC99;
+}
 
 /* --------------------------------------- */
 .footer {
-	height: auto;
-	text-align: center;
+    height: auto;
+    text-align: center;
+    padding-top: 20px;
 }
-.footer div{
-	justify-content: center;
-	margin: 20px;
-	font-size: 12px;
-	column-gap: 12px;
-	margin: 10px ;
-	padding: 0;
+.footer div {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    padding: 0;
+    font-size: 12px;
+    column-gap: 12px;
 }
-.footer div p{
-	margin: 0px;
+.footer div p {
+    margin: 0px;
 }
 
-/* --- МОБИЛЬНАЯ ВЕРСИЯ (Адаптация под index.html) --- */
+.copyright {
+    margin-top: 20px;
+    font-size: 14px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+.copyright a {
+    color: #ffcc00;
+    text-decoration: underline;
+}
 
+/* Մոբայլ տարբերակ */
 @media (max-width: 735px) {
-    /* Шапка как в index */
-
-	.header h3 { font-size: 30px; padding-top: 30px; }
-
+    .header .navbar img {
+        width: 35px;
+        height: auto;
+    }
+    .header h1 {
+        font-size: 22px;
+        margin-top: 10px;
+    }
     .header .header-desc { 
         font-size: 14px; 
         padding: 0 20px; 
         text-align: center; 
         line-height: 1.4;
     }
+    .header h3 { font-size: 30px; padding-top: 30px; }
 
-    .header .navbar img {
-        width: 35px; /* Уменьшенные иконки */
-        height: auto;
+    .mobile-collapse b {
+        margin-bottom: 30px;
     }
 
-    .header h1 {
-        font-size: 22px;
-        margin-top: 10px;
-    }
-
-    /* Контент */
     .content .content-text {
         width: 90%;
     }
-    
-    /* Скрываем всё, что внутри секций по умолчанию */
-    .mobile-collapse {
-        display: none; 
-        margin-top: 10px;
+
+    .content .content-text p, 
+    .content .content-text li,
+    .mobile-collapse p {
+        font-size: 12px !important;
+        text-align: justify;
+        text-indent: 15px;
     }
 
-    /* Стили для заголовка-кнопки */
     .accordion-header {
         cursor: pointer;
-        display: block;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        margin-top: 15px;
+        font-size: 18px !important;
+    }
+
+    .accordion-header::after {
+        content: '▼';
+        font-size: 12px;
+        color: #CCCC99;
+    }
+    .accordion-header.active::after {
+        content: '▲';
+    }
+
+    #always-open .content-text-el {
+        background: none;
+        padding: 10px 0;
+        cursor: default;
         border-bottom: 1px solid #CCCC9955;
-        padding-bottom: 5px;
+        margin-bottom: 10px;
+        display: block;
     }
 
-    .content .content-text div p img {
-        width: 100%;
-        float: none;
-        margin: 10px 0;
+    .img-t {
+        width: 120px;
+        margin-left: 10px;
+        margin-bottom: 5px;
     }
 
-    /* Футер как в index */
+    .mobile-collapse {
+        display: none;
+        padding: 10px 0;
+    }
+
+    .footer div a {
+        color: #CCCC99;
+        text-decoration: underline;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+    .footer div p {
+        display: none; 
+    }
     .footer div {
         flex-wrap: wrap;
-        font-size: 10px;
-        gap: 5px;
+        justify-content: center;
+        /* gap: 10px; */
     }
-    .footer img { width: 200px !important; }
-
+    .footer img { width: 200px !important; margin-bottom: 20px; }
 }
