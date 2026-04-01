@@ -1,68 +1,90 @@
 * {
-	font-family: Arial, Helvetica, sans-serif;
-	color: #CCCC99;
-	margin: 0px;
-	padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #CCCC99;
+    margin: 0px;
+    padding: 0px;
 }
 body{
-	background-color: black;
+    background-color: black;
 }
 /* --------------------------------------- */
 .header {
-	background-image: url(../../img/background/back-second.jpg);
-	background-repeat: no-repeat;
-	background-position: center;
-	height: auto;
-	text-align: center;
+    background-image: url(../../img/background/back-second.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: auto;
+    text-align: center;
 }
 .header h3{
-	font-size: 60px;
-	padding-top: 60px;
+    font-size: 60px;
+    padding-top: 60px;
 }
 .header h3, p, div{
-	margin-bottom: 25px;
+    margin-bottom: 25px;
 }
 .header p{
-	font-size: 20px;
+    font-size: 20px;
 }
 .header div a{
-	margin: 0px 4px;
+    margin: 0px 4px;
 }
 /* --------------------------------------- */
 .content {
-	height: auto;
-	background-image: url(../../img/background/back.jpg);
-	background-repeat: no-repeat;
-	background-position: center top;
-	text-align: center;
-	/* display: flex; */
+    height: auto;
+    background-image: url(../../img/background/back.jpg);
+    background-repeat: no-repeat;
+    background-position: center top;
+    text-align: center;
 }
-.content div img {
-	width: 200px;
-}
+
 .content .content-text{
-	margin: auto;
-	width: 1000px;
-	text-align: left;
-	text-indent: 25px;
-}
-.content .content-text h3, h4{
-	margin: 20px 0 20px 0;
-	text-indent: 0px;
-}
-.content .content-text h1{
-	text-align: center;
-}
-.content .content-text div p{
-	text-indent: 25px;
-	text-align: justify;
+    margin: auto;
+    width: 1000px;
+    text-align: left;
+    text-indent: 25px;
 
 }
-.content .content-text p img {
-	float: left;
-	width: 135px;
-	margin: 0px 10px 10px 10px;
-	border: 3px solid ;
+
+.content .content-text p{
+				text-align: justify;
+}
+
+/* Настройка картинок для обтекания */
+.img-t {
+    float: right; /* Картинка справа */
+    width: 250px; /* Размер как на фото */
+    height: auto;
+    margin-left: 20px; /* Отступ от текста */
+    margin-bottom: 10px;
+    border: 2px solid #CCCC99;
+    text-indent: 0; /* Чтобы отступ первой строки не влиял на картинку */
+}
+
+.content-text h1 {
+    font-size: 35px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 1px solid #CCCC99;
+    display: block;
+}
+
+.content-text h4 {
+    font-size: 22px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    /* color: #ffcc00; */
+}
+
+.section-content {
+    margin-bottom: 30px;
+}
+
+/* Очистка обтекания, чтобы заголовки не прыгали */
+.section-content::after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 /* --------------------------------------- */
@@ -80,4 +102,90 @@ body{
 }
 .footer div p{
 	margin: 0px;
+}
+
+.copyright {
+    margin-top: 20px;
+    font-size: 14px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+.copyright a {
+    color: #ffcc00;
+    text-decoration: underline;
+}
+
+/* Мобильная версия */
+@media (max-width: 735px) {
+    .content .content-text {
+        width: 90%;
+    }
+    
+    .img-t {
+        width: 120px; /* Меньше на мобилках */
+        margin-left: 10px;
+    }
+
+	p {
+        font-size: 12px !important; /* Увеличиваем размер шрифта для лучшей читаемости на мобильных */
+		text-align: justify;
+	}
+      .header .navbar img {
+        width: 35px; /* Уменьшенные иконки */
+        height: auto;
+    }
+
+    .header h1 {
+        font-size: 22px;
+        margin-top: 10px;
+    }
+
+	    .header .header-desc { 
+        font-size: 14px; 
+        padding: 0 20px; 
+        text-align: center; 
+        line-height: 1.4;
+    }
+
+	    .header h3 { font-size: 30px; padding-top: 30px; }
+    
+    .content-text h4 {
+        /* background: #1a1a1a; */
+        padding: 10px;
+        /* border-radius: 5px; */
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+		font-size: 15px;
+
+    }
+
+    .content-text h4::after { content: '▼'; font-size: 12px; }
+    .content-text h4.active::after { content: '▲'; }
+
+    .section-content { display: none; }
+    .section-content.show { display: block; }
+    
+    .footer div {
+        display: flex;
+        flex-wrap: wrap; /* Разрешаем перенос на новую строку */
+        justify-content: center;
+        gap: 10px; /* Расстояние между элементами */
+        padding: 0 20px;
+    }
+
+    /* Стили для самих ссылок, чтобы они выглядели как на фото */
+    .footer div a {
+        color: #CCCC99; /* Светло-золотистый цвет */
+        text-decoration: underline; /* Подчеркивание */
+        font-size: 14px;
+        white-space: nowrap; /* Чтобы текст ссылки не разрывался */
+    }
+
+    /* Скрываем разделители "--" на мобилках, если они мешают переносу */
+    .footer div p {
+        display: none; 
+    }
+
+    .footer img { width: 200px !important; margin-bottom: 20px; }
 }
