@@ -117,18 +117,28 @@
     </div>
 
 <script>
-        // Обработка клика по заголовкам
+    // 1. Фикс для того, чтобы скролл не закрывал текст
+    let lastWidth = window.innerWidth;
+
+    function initAccordion() {
+        const headers = document.querySelectorAll('.accordion-header');
+        
+        headers.forEach(header => {
+            // Удаляем старые слушатели, если они были
+            header.replaceWith(header.cloneNode(true));
+        });
+
+        // Назначаем заново
         document.querySelectorAll('.accordion-header').forEach(header => {
-            header.addEventListener('click', function(e) {
-                // Если ширина экрана мобильная
+            header.addEventListener('click', function() {
                 if (window.innerWidth <= 735) {
                     const section = this.parentElement;
-                    // Не закрываем секцию, которая должна быть всегда открыта
                     if (section.id === 'always-open') return;
 
                     this.classList.toggle("active");
                     const content = this.nextElementSibling;
                     
+                    // Плавное переключение
                     if (content.style.display === 'block') {
                         content.style.display = 'none';
                     } else {
@@ -137,36 +147,35 @@
                 }
             });
         });
+    }
 
-        // Исправленный handleResize, чтобы не сбрасывать состояние при скролле (изменение высоты в мобилках)
-        let lastWidth = window.innerWidth;
-        function handleResize() {
-            let currentWidth = window.innerWidth;
-            
-            // Срабатывает только если реально изменилась ШИРИНА экрана (например, поворот телефона)
-            if (currentWidth !== lastWidth) {
-                if (currentWidth > 735) {
-                    document.querySelectorAll('.mobile-collapse').forEach(c => {
-                        c.style.display = 'block';
-                    });
-                } else {
-                    document.querySelectorAll('.section').forEach(section => {
-                        const content = section.querySelector('.mobile-collapse');
-                        const header = section.querySelector('.accordion-header');
-                        if (section.id === 'always-open') {
-                            content.style.display = 'block';
-                        } else {
-                            content.style.display = 'none';
-                            if(header) header.classList.remove("active");
-                        }
-                    });
-                }
-                lastWidth = currentWidth;
+    function handleResize() {
+        let currentWidth = window.innerWidth;
+        
+        // Срабатывает ТОЛЬКО если изменилась ширина (поворот экрана)
+        if (currentWidth !== lastWidth) {
+            if (currentWidth > 735) {
+                document.querySelectorAll('.mobile-collapse').forEach(c => {
+                    c.style.display = 'block';
+                });
+            } else {
+                document.querySelectorAll('.section').forEach(section => {
+                    const content = section.querySelector('.mobile-collapse');
+                    if (section.id !== 'always-open') {
+                        content.style.display = 'none';
+                    }
+                });
             }
+            lastWidth = currentWidth;
         }
+    }
 
-        window.addEventListener('resize', handleResize);
-        window.addEventListener('load', handleResize);
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('load', () => {
+        initAccordion();
+        handleResize();
+    });
+</script>EventListener('load', handleResize);
     </script>
 </body>
 </html>
