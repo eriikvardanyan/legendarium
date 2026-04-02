@@ -78,3 +78,120 @@ body{
 .footer div p{
 	margin: 0px;
 }
+
+.content-text h4 {
+    font-size: 22px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    /* color: #ffcc00; */
+}
+
+.section-content {
+    margin-bottom: 30px;
+}
+
+/* Очистка обтекания, чтобы заголовки не прыгали */
+.section-content::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* --------------------------------------- */
+.footer {
+	height: auto;
+	text-align: center;
+}
+.footer div{
+	justify-content: center;
+	margin: 20px;
+	font-size: 12px;
+	column-gap: 12px;
+	margin: 10px ;
+	padding: 0;
+}
+.footer div p{
+	margin: 0px;
+}
+
+.copyright {
+    margin-top: 20px;
+    font-size: 14px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+.copyright a {
+    color: #ffcc00;
+    text-decoration: underline;
+}
+
+/* Мобильная версия */
+@media (max-width: 735px) {
+    /* 1) Скрываем мечи (картинки по бокам) */
+    .img-sur {
+        display: none !important;
+    }
+
+    .img {
+        height: auto !important;
+        width: 100% !important;
+    }
+    .content .content-text {
+        width: 90%;
+        margin: 0 auto;
+    }
+    
+    /* 2) Основной текст ровно 12px */
+    .content-text p {
+        font-size: 12px !important; 
+        text-align: justify;
+    }
+
+    .img-t {
+        width: 120px;
+        margin-left: 10px;
+    }
+
+    .header .navbar img {
+        width: 35px;
+        height: auto;
+    }
+
+    .header h1 {
+        font-size: 22px;
+        margin-top: 10px;
+    }
+
+    .header .header-desc { 
+        font-size: 14px; 
+        padding: 0 20px; 
+        text-align: center; 
+        line-height: 1.4;
+    }
+
+    .header h3 { 
+        font-size: 30px; 
+        padding-top: 30px; 
+    }
+    
+    .footer div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        padding: 0 20px;
+    }
+
+    .footer div a {
+        color: #CCCC99;
+        text-decoration: underline;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+
+    .footer div p {
+        display: none; 
+    }
+
+    .footer img { width: 200px !important; margin-bottom: 20px; }
+}
