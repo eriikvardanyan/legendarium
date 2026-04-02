@@ -41,7 +41,10 @@ body{
 	margin: 0px 4px;
 }
 
-.header h3, p, div{
+/* ✅ FIX 1 — убрали глобальное влияние */
+.header h3,
+.header p,
+.header div {
 	margin-bottom: 25px;
 }
 
@@ -112,21 +115,44 @@ body{
 	margin: 25px;
 }
 
+.line {
+    margin-top: 20px;    
+}
+
+    .copyright {
+        display: block !important;
+        margin-top: 15px !important;
+        font-size: 14px !important;
+        text-align: center !important;
+            margin-bottom: 20px;
+    }
+
+    .copyright a {
+        color: #ffcc00 !important;
+        text-decoration: underline;
+
+    }
+
+    .copyright a:hover {
+        color: #ffffff;
+    }
+
 /* --------------------------------------- */
 .footer {
 	height: auto;
 	text-align: center;
 }
 
-.footer div{
+/* ✅ FIX 2 — не трогаем copyright */
+.footer div:not(.copyright){
 	justify-content: center;
-	margin: 20px;
+	margin: 10px;
 	font-size: 12px;
 	column-gap: 12px;
-	margin: 10px ;
 	padding: 0;
 }
 
+/* ================= MOBILE ================= */
 @media (max-width: 735px) {
     body {
         display: block !important;
@@ -159,6 +185,13 @@ body{
         width: 100%;
     }
 
+    /* ✅ FIX 3 — текст 12px даже после JS */
+    .text-wrapper,
+    .text-wrapper * {
+        font-size: 12px !important;
+        text-align: justify !important;
+    }
+
     .content .content-books div a {
         display: flex !important;
         flex-direction: column !important;
@@ -185,10 +218,33 @@ body{
         height: auto !important;
     }
 
-    .footer img { width: 200px !important; }
+    .footer div:not(.copyright) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        padding: 0 20px;
+    }
 
-	.text-wrapper {
-		margin: 2px 15px !important;
-		text-align: justify !important;
-	}
+    .footer div a {
+        color: #CCCC99;
+        text-decoration: underline;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+
+    .footer div p {
+        display: none; 
+    }
+
+    .footer img { 
+        width: 200px !important; 
+        margin-bottom: 15px; 
+            margin-top: 20px;  
+    }
+
+    .text-wrapper {
+        margin: 2px 15px !important;
+    }
+
 }
