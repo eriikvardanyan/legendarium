@@ -116,51 +116,57 @@
         </div>
     </div>
 
-    <script>
-        (function() {
-            const isMobile = window.innerWidth <= 735;
-            const paragraphElem = document.getElementById('full-paragraph');
-            if (!paragraphElem) return;
-            
-            if (!isMobile) return;
+<script>
+        // Обработка клика по заголовкам
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', function(e) {
+                // Если ширина экрана мобильная
+                if (window.innerWidth <= 735) {
+                    const section = this.parentElement;
+                    // Не закрываем секцию, которая должна быть всегда открыта
+                    if (section.id === 'always-open') return;
 
-            const fullHTML = paragraphElem.innerHTML;
-            const cutPhrase = "Թոլքինի ստեղծագործություններում նկարագրված իրադարձությունները։";
-            let cutIndex = fullHTML.indexOf(cutPhrase);
-            if (cutIndex === -1) return;
-            const endOfCut = cutIndex + cutPhrase.length;
-            let firstPart = fullHTML.substring(0, endOfCut);
-            let secondPart = fullHTML.substring(endOfCut);
-            const wrapper = document.getElementById('legendarium-text-wrapper');
-            if (!wrapper) return;
-            wrapper.innerHTML = '';
-            const shortSpan = document.createElement('span');
-            shortSpan.innerHTML = firstPart;
-            const fullSpan = document.createElement('span');
-            fullSpan.style.display = 'none';
-            fullSpan.innerHTML = secondPart;
-            const readMoreBtn = document.createElement('button');
-            readMoreBtn.textContent = 'Տեսնել ավելին';
-            readMoreBtn.className = 'read-more-btn';
-            const hideBtn = document.createElement('button');
-            hideBtn.textContent = 'Փակել';
-            hideBtn.className = 'read-more-btn';
-            hideBtn.style.display = 'none';
-            wrapper.appendChild(shortSpan);
-            wrapper.appendChild(fullSpan);
-            wrapper.appendChild(readMoreBtn);
-            wrapper.appendChild(hideBtn);
-            readMoreBtn.onclick = () => {
-                fullSpan.style.display = 'inline';
-                readMoreBtn.style.display = 'none';
-                hideBtn.style.display = 'inline-block';
-            };
-            hideBtn.onclick = () => {
-                fullSpan.style.display = 'none';
-                readMoreBtn.style.display = 'inline-block';
-                hideBtn.style.display = 'none';
-            };
-        })();
+                    this.classList.toggle("active");
+                    const content = this.nextElementSibling;
+                    
+                    if (content.style.display === 'block') {
+                        content.style.display = 'none';
+                    } else {
+                        content.style.display = 'block';
+                    }
+                }
+            });
+        });
+
+        // Исправленный handleResize, чтобы не сбрасывать состояние при скролле (изменение высоты в мобилках)
+        let lastWidth = window.innerWidth;
+        function handleResize() {
+            let currentWidth = window.innerWidth;
+            
+            // Срабатывает только если реально изменилась ШИРИНА экрана (например, поворот телефона)
+            if (currentWidth !== lastWidth) {
+                if (currentWidth > 735) {
+                    document.querySelectorAll('.mobile-collapse').forEach(c => {
+                        c.style.display = 'block';
+                    });
+                } else {
+                    document.querySelectorAll('.section').forEach(section => {
+                        const content = section.querySelector('.mobile-collapse');
+                        const header = section.querySelector('.accordion-header');
+                        if (section.id === 'always-open') {
+                            content.style.display = 'block';
+                        } else {
+                            content.style.display = 'none';
+                            if(header) header.classList.remove("active");
+                        }
+                    });
+                }
+                lastWidth = currentWidth;
+            }
+        }
+
+        window.addEventListener('resize', handleResize);
+        window.addEventListener('load', handleResize);
     </script>
 </body>
 </html>
